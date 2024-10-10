@@ -1,0 +1,11 @@
+*
+
+!.gitignore
+!.config/nvim/
+!.config/nvim/*
+!.tmux.config
+!.ideavimrc
+!.gitconfig
+!.wezterm.lua
+!.vimrc
+!.zshrc
