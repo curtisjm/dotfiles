@@ -3,7 +3,7 @@
 !.gitignore
 !.config/nvim/
 !.config/nvim/*
-!.tmux.config
+!.tmux.conf
 !.ideavimrc
 !.gitconfig
 !.wezterm.lua
