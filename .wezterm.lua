@@ -1,7 +1,5 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
 config.window_padding = {
@@ -11,9 +9,14 @@ config.window_padding = {
 	bottom = 0,
 }
 
--- This is where you actually apply your config choices
+config.keys = {
+	{
+		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+}
 
--- my coolnight colorscheme
 -- config.colors = {
 -- 	foreground = "#CBE0F0",
 -- 	background = "#011423",
@@ -31,16 +34,22 @@ config.window_padding = {
 config.color_scheme = "Tokyo Night Moon"
 -- config.color_scheme = "tokyonight"
 
-config.font = wezterm.font("MesloLGS Nerd Font Mono")
+-- config.font = wezterm.font("MesloLGS Nerd Font Mono")
+-- config.font_size = 16
+config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 16
+config.line_height = 1.2
+
+-- config.adjust_window_size_when_changing_font_size = false
+config.use_resize_increments = true
+config.enable_scroll_bar = false
 
 config.enable_tab_bar = false
 
 config.window_decorations = "RESIZE"
 -- config.window_background_opacity = 0.75
 -- config.macos_window_background_blur = 10
-config.window_background_opacity = 0.75
-config.macos_window_background_blur = 15
+config.window_background_opacity = 0.4
+config.macos_window_background_blur = 30
 
--- and finally, return the configuration to wezterm
 return config
